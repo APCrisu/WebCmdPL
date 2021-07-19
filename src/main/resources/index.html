@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>${title}</title>
+</head>
+<body>
+<h1>${title}</h1>
+<form onsubmit="return false;">
+    <input type="text" id="command" style="width: 80%;">
+    <input type="button" id="send" value="SEND">
+</form>
+<button id="clear">CLEAR</button>
+<code>
+    <pre id="log" style="background-color: black; color: white;"></pre>
+</code>
+<script defer>
+        const send = event => {
+            if (document.getElementById("command").value == "") return;
+            const command = document.getElementById("command").value;
+            document.getElementById("command").value = "";
+            document.getElementById("log").innerText += `> ${command}\n`;
+        };
+        document.getElementById("command").addEventListener("keydown", event => {
+            if (event.key == "Enter") send();
+        });
+        document.getElementById("send").addEventListener("click", send);
+        document.getElementById("clear").addEventListener("click", event => {
+            document.getElementById("log").innerText = "";
+        });
+</script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+name: WebCmdPL
+version: ${project.version}
+main: io.github.apcrisu.webcmdpl.WebCmdPL
+api-version: 1.17
+prefix: WebCmd
+authors: [ TwoSquirrels ]
+description: ブラウザでマイクラサーバーにコマンドを叩けるプラグイン
+website: https://github.com/APCrisu/WebCmdPL
